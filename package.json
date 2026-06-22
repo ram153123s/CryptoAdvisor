@@ -1,0 +1,16 @@
+{
+  "name": "cryptoadvisor",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
