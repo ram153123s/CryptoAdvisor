@@ -5,13 +5,15 @@ import {
   Card,
   CardContent,
   CircularProgress,
-  Divider,
   Link,
   Stack,
   Typography,
 } from "@mui/material";
 import { fetchDashboard } from "../api/dashboard";
 import VoteButtons from "./VoteButtons";
+import Plaque from "./Plaque";
+import RopeDivider from "./RopeDivider";
+import parrot from "../assets/svgs/parrot.svg";
 
 export default function NewsCard() {
   const { data, isPending, isError } = useQuery({
@@ -22,9 +24,7 @@ export default function NewsCard() {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          Market News
-        </Typography>
+        <Plaque icon={parrot}>Parrot's Nest</Plaque>
 
         {isPending && (
           <Box className="flex justify-center py-6">
@@ -41,7 +41,7 @@ export default function NewsCard() {
         )}
 
         {!isPending && !isError && data.news.length > 0 && (
-          <Stack divider={<Divider flexItem />} spacing={1.5}>
+          <Stack divider={<RopeDivider />} spacing={1.5}>
             {data.news.map((item) => (
               <Box
                 key={item.url}

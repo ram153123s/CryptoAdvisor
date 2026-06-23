@@ -10,7 +10,9 @@ import {
 } from "@mui/material";
 import { fetchDashboard } from "../api/dashboard";
 import VoteButtons from "./VoteButtons";
-import fallbackMeme from "../assets/fallbackmeme.webp";
+import Plaque from "./Plaque";
+import tavern from "../assets/svgs/tavern.svg";
+import fallbackMeme from "../assets/pics/fallbackmeme.webp";
 
 export default function MemeCard() {
   const [imgError, setImgError] = useState(false);
@@ -23,9 +25,7 @@ export default function MemeCard() {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          Meme of the Moment
-        </Typography>
+        <Plaque icon={tavern}>Pirate Tavern</Plaque>
 
         {isPending && (
           <Box className="flex justify-center py-6">

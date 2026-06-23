@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { fetchDashboard } from "../api/dashboard";
 import VoteButtons from "./VoteButtons";
+import Plaque from "./Plaque";
+import scroll from "../assets/svgs/scroll.svg";
 
 export default function AiInsightCard() {
   const { data, isPending, isError } = useQuery({
@@ -19,9 +21,7 @@ export default function AiInsightCard() {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          AI Insight of the Day
-        </Typography>
+        <Plaque icon={scroll}>Captain's Log</Plaque>
 
         {isPending && (
           <Box className="flex justify-center py-6">

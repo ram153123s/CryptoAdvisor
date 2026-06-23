@@ -6,12 +6,14 @@ import {
   Card,
   CardContent,
   CircularProgress,
-  Divider,
   Stack,
   Typography,
 } from "@mui/material";
 import { fetchDashboard } from "../api/dashboard";
 import VoteButtons from "./VoteButtons";
+import Plaque from "./Plaque";
+import RopeDivider from "./RopeDivider";
+import chest from "../assets/svgs/chest.svg";
 
 function formatPrice(value: number) {
   return value.toLocaleString("en-US", {
@@ -30,9 +32,7 @@ export default function PricesCard() {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h5" gutterBottom>
-          Coin Prices
-        </Typography>
+        <Plaque icon={chest}>Treasure Chest</Plaque>
 
         {isPending && (
           <Box className="flex justify-center py-6">
@@ -51,7 +51,7 @@ export default function PricesCard() {
         )}
 
         {!isPending && !isError && data.prices.length > 0 && (
-          <Stack divider={<Divider flexItem />} spacing={1}>
+          <Stack divider={<RopeDivider />} spacing={1}>
             {data.prices.map((coin) => {
               const up = (coin.change24h ?? 0) >= 0;
               return (

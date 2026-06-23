@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import { login as loginRequest } from "../api/auth";
 import { useAuth } from "../auth/AuthContext";
-import logo from "../assets/logo.webp";
+import logo from "../assets/pics/logo.webp";
 
 const schema = z.object({
   email: z.email("Enter a valid email"),

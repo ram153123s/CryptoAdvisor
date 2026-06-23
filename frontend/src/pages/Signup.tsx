@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { signup } from "../api/auth";
 import { useAuth } from "../auth/AuthContext";
+import logo from "../assets/pics/logo.webp";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -57,7 +58,15 @@ export default function Signup() {
           spacing={3}
           onSubmit={handleSubmit((values) => mutation.mutate(values))}
         >
-          <Typography variant="h4">Create account</Typography>
+          <Box
+            component="img"
+            src={logo}
+            alt="CryptoAdvisor"
+            className="w-full mx-auto object-contain -mb-16"
+          />
+          <Typography variant="h4" className="text-center">
+            Create account
+          </Typography>
 
           {mutation.isError && <Alert severity="error">{errorMessage}</Alert>}
 
