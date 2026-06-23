@@ -9,7 +9,10 @@ import votesRoutes from "./routes/votes.js";
 
 const app = express();
 
-app.use(cors());
+// In production, lock CORS to the deployed frontend (set CLIENT_ORIGIN on the
+// host). Locally, with no CLIENT_ORIGIN set, allow any origin for convenience.
+const clientOrigin = process.env.CLIENT_ORIGIN;
+app.use(cors(clientOrigin ? { origin: clientOrigin } : undefined));
 app.use(express.json());
 
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
