@@ -13,7 +13,7 @@
 
 ## Live demo
 
-- **Frontend:** `https://crypto-advisor-frontend-ten.vercel.app/dashboard`
+- **Frontend:** `https://crypto-advisor-frontend-ten.vercel.app`
 - **Backend:** `https://cryptoadvisor-wery.onrender.com` (health: `/api/health`)
 
 > Free-tier backend sleeps when idle - the first request may take ~30-60s to wake.
