@@ -27,19 +27,17 @@ export default function Dashboard() {
 
   return (
     <Container maxWidth="lg" className="py-8">
-      <Box className="flex flex-col items-center gap-3 mb-4 md:flex-row md:items-end md:justify-between md:gap-0">
-        <Box className="order-2 md:order-1 md:flex-1 text-center md:text-left">
-          <Typography variant="h4">
-            {user ? `Ahoy,  ${user.name}! Welcome aboard!` : "Dashboard"}
-          </Typography>
-        </Box>
+      <Box className="relative flex flex-col items-center gap-2 mb-6">
         <Box
           component="img"
           src={logo}
           alt="CryptoAdvisor"
-          className="order-1 md:order-2 h-24 md:h-36 object-contain"
+          className="h-24 md:h-36 object-contain"
         />
-        <Box className="order-3 md:flex-1 flex md:justify-end">
+        <Typography variant="h4" className="text-center">
+          {user ? `Ahoy, ${user.name}! Welcome aboard!` : "Dashboard"}
+        </Typography>
+        <Box className="mt-2 md:mt-0 md:absolute md:top-0 md:right-0">
           <Button variant="outlined" color="inherit" onClick={handleLogout}>
             Log out
           </Button>

@@ -73,7 +73,7 @@ export default function PricesCard() {
                     </Box>
                   </Box>
 
-                  <Box className="text-right">
+                  <Box sx={{ ml: "auto", minWidth: 110, textAlign: "right" }}>
                     <Typography variant="subtitle2">
                       {formatPrice(coin.price)}
                     </Typography>
